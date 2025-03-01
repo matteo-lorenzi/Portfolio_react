@@ -26,7 +26,7 @@ const Projects = () => {
             <h3>Terraforma</h3>
             <p>Création d’un jeu vidéo ludo-éducatif pour un niveau de 3ème en SVT.</p>
             <div className="project-links">
-              <a href="#" className="project-link primary">Voir le projet</a>
+              <Link to="/all-projects" className="project-link primary">Voir le projet</Link>
               <a href="#" className="project-link secondary">Code source</a>
             </div>
           </div>
@@ -46,7 +46,7 @@ const Projects = () => {
             <h3>GameJam</h3>
             <p>Création d’un jeu en lien avec l’IUT.</p>
             <div className="project-links">
-              <a href="#" className="project-link primary">Voir le projet</a>
+              <Link to="/all-projects" className="project-link primary">Voir le projet</Link>
               <a href="#" className="project-link secondary">Code source</a>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Projects = () => {
             <h3>Fish’Event</h3>
             <p>Développement d'une application évènementielle pour la pêche.</p>
             <div className="project-links">
-              <a href="#" className="project-link primary">Voir le projet</a>
+              <Link to="/all-projects" className="project-link primary">Voir le projet</Link>
               <a href="#" className="project-link secondary">Code source</a>
             </div>
           </div>

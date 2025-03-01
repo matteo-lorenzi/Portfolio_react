@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
+import ProjectPage from './pages/ProjectPage';
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-projects" element={<AllProjects />} />
-        {/* Ajoutez ici les routes pour les projets individuels */}
+        <Route path="/projects/:id" element={<ProjectPage />} />
       </Routes>
     </Router>
   );

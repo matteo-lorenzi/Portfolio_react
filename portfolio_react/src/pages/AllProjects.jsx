@@ -1,10 +1,11 @@
+// src/pages/AllProjects.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AllProjects.css';
-import Headers from '../components/Header.jsx';
+import Header from '../components/Header';
+import NavBarProject from '../components/NavBarProject';
 
 const AllProjects = () => {
-    // Mise à jour des projets pour correspondre au document
     const projects = [
         { id: 1, title: 'Terraforma', description: 'Création d’un jeu vidéo ludo-éducatif pour un niveau de 3ème en SVT.' },
         { id: 2, title: 'GameJam', description: 'Création d’un jeu en lien avec l’IUT.' },
@@ -16,22 +17,10 @@ const AllProjects = () => {
 
     return (
         <>
-            <Headers />
+            <Header />
             <main>
                 <div className="all-projects">
-                    <aside className="sidebar">
-                        <div className="sidebar-header">
-                            <h2>Navigation</h2>
-                        </div>
-                        <nav className="sidebar-nav">
-                            <ul>
-                                <li><Link to="/all-projects">Tous les projets</Link></li>
-                                <li><Link to="/all-projects/category/recents">Projets récents</Link></li>
-                                <li><Link to="/all-projects/category/anciens">Projets anciens</Link></li>
-                                <li><Link to="/all-projects/a-propos">À propos</Link></li>
-                            </ul>
-                        </nav>
-                    </aside>
+                    <NavBarProject />
                     <main className="content">
                         <header className="wiki-header">
                             <h1>Wiki de Projets</h1>
@@ -54,7 +43,6 @@ const AllProjects = () => {
                 </div>
             </main>
         </>
-
     );
 };
 
