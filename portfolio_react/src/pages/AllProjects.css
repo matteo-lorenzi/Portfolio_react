@@ -1,0 +1,158 @@
+/* Container principal : Sidebar à gauche et contenu principal à droite */
+.all-projects {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f9ff;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Sidebar de navigation */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 1.5rem;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  color: #0099ff;
+  margin-bottom: 1rem;
+  font-weight: bold; 
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 0.4rem; 
+}
+
+.sidebar-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem; 
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: block; 
+  padding: 0.5rem 1rem; 
+  border-radius: 4px;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a:focus {
+  color: #fff;
+  background-color: #007acc; 
+  outline: none; 
+}
+
+/* Contenu principal */
+.content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+/* En-tête du wiki */
+.wiki-header {
+  margin-bottom: 2rem;
+}
+
+.wiki-header h1 {
+  font-size: 2.5rem; /* Réduction de la taille pour une meilleure lisibilité */
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.wiki-header p {
+  font-size: 1.15rem; /* Ajustement de la taille pour une meilleure lisibilité */
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Liste des projets */
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Carte projet */
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h2 {
+  font-size: 1.5rem; /* Ajustement de la taille pour une meilleure lisibilité */
+  color: #0099ff;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #0099ff;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+}
+
+.btn.primary:hover {
+  background: #007acc;
+  box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #0099ff;
+  border: 1px solid #0099ff;
+}
+
+.btn.secondary:hover {
+  background: rgba(0, 153, 255, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .all-projects {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+  }
+  .content {
+    padding: 1rem;
+  }
+}

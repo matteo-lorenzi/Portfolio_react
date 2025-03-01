@@ -1,5 +1,6 @@
 // src/components/Projects.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
 const Projects = () => {
@@ -11,18 +12,19 @@ const Projects = () => {
       </div>
 
       <div className="projects-inner">
+        {/* Projet 1: Terraforma */}
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
               <div className="project-tags">
-                <span>React</span>
-                <span>UI/UX</span>
+                <span>Éducation</span>
+                <span>Jeu Vidéo</span>
               </div>
             </div>
           </div>
           <div className="project-content">
-            <h3>Application Web Responsive</h3>
-            <p>Création d'une interface utilisateur moderne avec React et styled-components pour une expérience fluide sur tous les appareils.</p>
+            <h3>Terraforma</h3>
+            <p>Création d’un jeu vidéo ludo-éducatif pour un niveau de 3ème en SVT.</p>
             <div className="project-links">
               <a href="#" className="project-link primary">Voir le projet</a>
               <a href="#" className="project-link secondary">Code source</a>
@@ -30,18 +32,19 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* Projet 2: GameJam */}
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
               <div className="project-tags">
-                <span>JavaScript</span>
-                <span>Three.js</span>
+                <span>GameJam</span>
+                <span>Développement</span>
               </div>
             </div>
           </div>
           <div className="project-content">
-            <h3>Visualisation 3D Interactive</h3>
-            <p>Développement d'une expérience 3D interactive utilisant Three.js avec animations et interactions utilisateur avancées.</p>
+            <h3>GameJam</h3>
+            <p>Création d’un jeu en lien avec l’IUT.</p>
             <div className="project-links">
               <a href="#" className="project-link primary">Voir le projet</a>
               <a href="#" className="project-link secondary">Code source</a>
@@ -49,28 +52,97 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* Projet 3: Fish’Event */}
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
               <div className="project-tags">
-                <span>Node.js</span>
-                <span>MongoDB</span>
+                <span>Évènementiel</span>
+                <span>Application</span>
               </div>
             </div>
           </div>
           <div className="project-content">
-            <h3>API RESTful</h3>
-            <p>Conception et implémentation d'une API RESTful avec Node.js et MongoDB pour la gestion de données utilisateur.</p>
+            <h3>Fish’Event</h3>
+            <p>Développement d'une application évènementielle pour la pêche.</p>
             <div className="project-links">
               <a href="#" className="project-link primary">Voir le projet</a>
               <a href="#" className="project-link secondary">Code source</a>
             </div>
           </div>
+        </div>
+
+        {/* Projet 4: Comparaison d’approches algorithmiques */}
+        {/*
+  <div className="project-card">
+    <div className="project-image">
+      <div className="project-overlay">
+        <div className="project-tags">
+          <span>Algorithmie</span>
+          <span>Code</span>
         </div>
       </div>
+    </div>
+    <div className="project-content">
+      <h3>Comparaison d’approches algorithmiques</h3>
+      <p>Comparaison d’approches algorithmiques.</p>
+      <div className="project-links">
+        <a href="#" className="project-link primary">Voir le projet</a>
+        <a href="#" className="project-link secondary">Code source</a>
+      </div>
+    </div>
+  </div>
+  */}
+
+        {/* Projet 5: Site web pour élèves de 3ème */}
+        {/*
+  <div className="project-card">
+    <div className="project-image">
+      <div className="project-overlay">
+        <div className="project-tags">
+          <span>Web</span>
+          <span>Éducation</span>
+        </div>
+      </div>
+    </div>
+    <div className="project-content">
+      <h3>Site web pour élèves de 3ème</h3>
+      <p>Site web simplifiant la recherche de stage pour les élèves de 3ème.</p>
+      <div className="project-links">
+        <a href="#" className="project-link primary">Voir le projet</a>
+        <a href="#" className="project-link secondary">Code source</a>
+      </div>
+    </div>
+  </div>
+  */}
+
+        {/* Projet 6: Installation d'un poste pour le développement */}
+        {/*
+  <div className="project-card">
+    <div className="project-image">
+      <div className="project-overlay">
+        <div className="project-tags">
+          <span>Développement</span>
+          <span>Installation</span>
+        </div>
+      </div>
+    </div>
+    <div className="project-content">
+      <h3>Installation d'un poste pour le développement</h3>
+      <p>Installation d'un poste pour le développement.</p>
+      <div className="project-links">
+        <a href="#" className="project-link primary">Voir le projet</a>
+        <a href="#" className="project-link secondary">Code source</a>
+      </div>
+    </div>
+  </div>
+  */}
+      </div>
+
+
 
       <div className="projects-cta">
-        <a href="https://github.com/votre-username" className="btn primary">Voir tous mes projets</a>
+        <Link to="/all-projects" className="btn primary">Voir tous mes projets</Link>
       </div>
 
       <div className="projects-shapes">
