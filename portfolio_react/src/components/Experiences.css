@@ -2,7 +2,7 @@
 .experiences {
   position: relative;
   padding: 6rem 2rem;
-  background: #f8fbff;
+  background: var(--secondary-background);
   overflow: hidden;
 }
 
@@ -17,7 +17,7 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #0099ff;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
@@ -25,7 +25,7 @@
 .experiences h2 {
   font-size: 2.75rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
   letter-spacing: -0.5px;
 }
@@ -75,7 +75,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #0099ff;
+  background: var(--primary-color);
   box-shadow: 0 0 0 4px rgba(0, 153, 255, 0.2);
   left: 13px;
   top: 10px;
@@ -84,7 +84,7 @@
 
 /* Contenu de l'expérience */
 .experience-content {
-  background: #fff;
+  background: var(--secondary-color);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   overflow: hidden;
@@ -102,7 +102,7 @@
 .experience-date {
   background: rgba(0, 153, 255, 0.08);
   padding: 0.75rem 1.5rem;
-  color: #0099ff;
+  color: var(--primary-color);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -123,13 +123,13 @@
 .experience h4 {
   font-size: 1rem;
   font-weight: 500;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
 .experience p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
@@ -144,7 +144,7 @@
 .experience-tags span {
   padding: 0.3rem 0.8rem;
   background: rgba(0, 153, 255, 0.1);
-  color: #0099ff;
+  color: var(--primary-color);
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;

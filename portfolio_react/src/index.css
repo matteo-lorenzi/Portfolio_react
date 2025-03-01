@@ -1,4 +1,36 @@
 /* src/index.css */
+/* src/styles/global.css */
+
+:root {
+  /* Couleurs principales */
+  --primary-color: #0099ff;
+  --primary-hover: #007acc;
+  --primary-light: #66d9ff;
+  --primary-background: #f5f9ff;
+
+  /* Couleurs secondaires */
+  --secondary-color: #ffffff;
+  --secondary-background: #f8fbff;
+  --secondary-border: #eaeaea;
+  --secondary-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Texte */
+  --text-color: #333;
+  --text-secondary: #555;
+  --text-muted: #666;
+
+  /* Boutons */
+  --btn-bg: var(--primary-color);
+  --btn-hover-bg: var(--primary-hover);
+  --btn-border: var(--primary-color);
+  --btn-shadow: rgba(0, 153, 255, 0.3);
+
+  /* Effets */
+  --box-shadow-light: 0 4px 15px var(--btn-shadow);
+  --box-shadow-hover: 0 6px 20px rgba(0, 153, 255, 0.4);
+}
+
+
 * {
   margin: 0;
   padding: 0;
