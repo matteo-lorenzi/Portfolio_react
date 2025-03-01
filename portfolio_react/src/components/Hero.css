@@ -1,9 +1,9 @@
 /* src/components/Hero.css */
 .hero {
   position: relative;
-  padding: 8rem 2rem 6rem; /* Plus d'espace vertical */
+  padding: 8rem 2rem 6rem;
   background: linear-gradient(135deg, #f5f9ff, #ffffff);
-  min-height: 90vh; /* Hauteur minimale pour un impact visuel */
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -20,7 +20,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  gap: 3rem; /* Espace entre texte et avatar */
+  gap: 3rem;
 }
 
 /* Section texte avec typographie améliorée */
@@ -33,7 +33,7 @@
   display: block;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #0099ff;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
@@ -50,7 +50,7 @@
 .hero-text p {
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.6;
   max-width: 500px;
 }
@@ -77,15 +77,15 @@
 }
 
 .btn.primary {
-  background: #0099ff;
+  background: var(--primary-color);
   color: #fff;
   box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
 }
 
 .btn.secondary {
   background: transparent;
-  color: #0099ff;
-  border: 1px solid #0099ff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .btn:hover {
@@ -93,7 +93,7 @@
 }
 
 .btn.primary:hover {
-  background: #007acc;
+  background: var(--primary-hover);
   box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
 }
 
@@ -128,7 +128,7 @@
   left: 15px;
   width: 280px;
   height: 280px;
-  border: 2px solid #0099ff;
+  border: 2px solid var(--primary-color);
   border-radius: 16px;
   z-index: 1;
 }
@@ -157,7 +157,7 @@
 .shape-1 {
   width: 500px;
   height: 500px;
-  background: linear-gradient(135deg, #0099ff, #66d9ff);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   top: -60px;
   right: -100px;
 }
@@ -165,7 +165,7 @@
 .shape-2 {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, #007acc, #0099ff);
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
   bottom: 10px;
   left: -10px;
 }

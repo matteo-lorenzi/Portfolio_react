@@ -1,14 +1,14 @@
 /* src/components/Contact.css */
 .contact {
   padding: 4rem 2rem;
-  background: #fff;
+  background: var(--secondary-background);
   text-align: center;
 }
 
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #0099ff;
+  color: var(--primary-color);
 }
 
 .contact-form {
@@ -20,7 +20,7 @@
 .contact-form label {
   display: block;
   font-size: 1rem;
-  color: #555;
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -28,7 +28,7 @@
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--secondary-color);
   border-radius: 4px;
   margin-bottom: 1rem;
   transition: border-color 0.3s ease;
@@ -36,7 +36,7 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #0099ff;
+  border-color: var(--primary-color);
   outline: none;
 }
 
@@ -44,8 +44,8 @@
   width: 100%;
   text-align: center;
   padding: 0.75rem;
-  background: #0099ff;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border: none;
   border-radius: 50px;
   font-size: 1rem;
@@ -53,5 +53,5 @@
 }
 
 .contact-form .btn:hover {
-  background: #007acc;
+  background: var(--primary-hover);
 }

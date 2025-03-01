@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AllProjects.css';
+import Headers from '../components/Header.jsx';
 
 const AllProjects = () => {
     // Mise à jour des projets pour correspondre au document
@@ -14,40 +15,46 @@ const AllProjects = () => {
     ];
 
     return (
-        <div className="all-projects">
-            <aside className="sidebar">
-                <div className="sidebar-header">
-                    <h2>Navigation</h2>
+        <>
+            <Headers />
+            <main>
+                <div className="all-projects">
+                    <aside className="sidebar">
+                        <div className="sidebar-header">
+                            <h2>Navigation</h2>
+                        </div>
+                        <nav className="sidebar-nav">
+                            <ul>
+                                <li><Link to="/all-projects">Tous les projets</Link></li>
+                                <li><Link to="/all-projects/category/recents">Projets récents</Link></li>
+                                <li><Link to="/all-projects/category/anciens">Projets anciens</Link></li>
+                                <li><Link to="/all-projects/a-propos">À propos</Link></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <main className="content">
+                        <header className="wiki-header">
+                            <h1>Wiki de Projets</h1>
+                            <p>
+                                Bienvenue sur mon wiki de projets. Cliquez sur un projet pour en savoir plus ou parcourez les catégories via la navigation.
+                            </p>
+                        </header>
+                        <section className="projects-content">
+                            {projects.map((project) => (
+                                <article key={project.id} className="project-card">
+                                    <h2>{project.title}</h2>
+                                    <p>{project.description}</p>
+                                    <Link to={`/projects/${project.id}`} className="btn secondary">
+                                        En savoir plus
+                                    </Link>
+                                </article>
+                            ))}
+                        </section>
+                    </main>
                 </div>
-                <nav className="sidebar-nav">
-                    <ul>
-                        <li><Link to="/all-projects">Tous les projets</Link></li>
-                        <li><Link to="/all-projects/category/recents">Projets récents</Link></li>
-                        <li><Link to="/all-projects/category/anciens">Projets anciens</Link></li>
-                        <li><Link to="/all-projects/a-propos">À propos</Link></li>
-                    </ul>
-                </nav>
-            </aside>
-            <main className="content">
-                <header className="wiki-header">
-                    <h1>Wiki de Projets</h1>
-                    <p>
-                        Bienvenue sur mon wiki de projets. Cliquez sur un projet pour en savoir plus ou parcourez les catégories via la navigation.
-                    </p>
-                </header>
-                <section className="projects-content">
-                    {projects.map((project) => (
-                        <article key={project.id} className="project-card">
-                            <h2>{project.title}</h2>
-                            <p>{project.description}</p>
-                            <Link to={`/projects/${project.id}`} className="btn secondary">
-                                En savoir plus
-                            </Link>
-                        </article>
-                    ))}
-                </section>
             </main>
-        </div>
+        </>
+
     );
 };
 
