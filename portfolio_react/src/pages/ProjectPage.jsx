@@ -1,14 +1,15 @@
 // src/pages/ProjectPage.jsx
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import './ProjectPage.css';
 import NavBarProject from '../components/NavBarProject';
 
 const ProjectPage = () => {
     const { id } = useParams();
+    const numericId = parseInt(id);
 
-    // Données pour les projets
+    // Données pour les projets (inchangées)
     const projectsData = {
         1: {
             title: 'Terraforma',
@@ -20,6 +21,7 @@ const ProjectPage = () => {
             ],
             tags: ['#javascript', '#HTML', '#css', '#PHP', '#github'],
         },
+        // ... autres projets (inchangés)
         2: {
             title: 'GameJam',
             description: [
@@ -32,14 +34,14 @@ const ProjectPage = () => {
             tags: ['#Python', '#github'],
         },
         3: {
-            title: 'Fish’Event',
+            title: 'Fish\'Event',
             description: [
                 "Développement d'une application évènementielle pour la pêche.",
             ],
             tags: ['#event', '#fishing'],
         },
         4: {
-            title: 'Comparaison d’approches algorithmiques',
+            title: 'Comparaison d\'approches algorithmiques',
             description: [
                 "Ce projet en binôme visait à développer un algorithme de reconnaissance de sujets dans des dépêches. Nous avons développé un programme en Java qui a été entraîné sur une base de données de dépêches et est capable d'analyser le texte d'une dépêche et de déterminer automatiquement son sujet.",
                 "La collaboration étroite avec notre binôme nous a permis d'échanger des idées, de partager des connaissances et de résoudre ensemble les défis auxquels nous étions confrontés. Nous avons dû être attentifs aux idées de notre partenaire, expliquer nos propres concepts de manière claire et écouter activement les suggestions et les commentaires.",
@@ -57,7 +59,7 @@ const ProjectPage = () => {
             tags: ['#HTML', '#css', '#github'],
         },
         6: {
-            title: 'Installation d\'un poste pour le développement',
+            title: "Installation d'un poste pour le développement",
             description: [
                 "Le projet consistait à installer un environnement de développement en téléchargeant un système d'exploitation et des outils tels que Git, Visual Studio Code, IntelliJ IDEA et le kit de développement Java. L'objectif était de rendre le processus convivial et accessible à tous, en simplifiant les explications techniques.",
                 "Nous avons téléchargé un système d'exploitation, l'avons installé sur une machine, et avons ensuite procédé au téléchargement de tous les packages nécessaires pour pouvoir mener à bien le développement. Cela incluait des outils tels que Git, Visual Studio Code, IntelliJ IDEA et le kit de développement Java (Java Development Kit, JDK).",
@@ -71,33 +73,62 @@ const ProjectPage = () => {
     const project = projectsData[id];
 
     if (!project) {
-        return <div>Projet non trouvé</div>;
+        return <div className="project-not-found">Projet non trouvé</div>;
     }
+
+    // Calculer le projet précédent et suivant pour la navigation
+    const prevProjectId = numericId > 1 ? numericId - 1 : null;
+    const nextProjectId = numericId < Object.keys(projectsData).length ? numericId + 1 : null;
+
+    // Formatter le tag pour l'utiliser comme classe CSS
+    const formatTagClass = (tag) => {
+        return `tag tag-${tag.slice(1).toLowerCase()} tag-lg`;
+    };
 
     return (
         <>
             <Header />
-            <main>
-                <section className="project"> 
-                    <NavBarProject />
-                    <div className="name">
-                        <h2>{project.title}</h2>
-                        <div className="tags">
-                            <p>Tags :</p>
-                            {project.tags.map((tag, index) => (
-                                <span key={index} className={`tag tag-${tag.slice(1).toLowerCase()} tag-lg`}>
-                                    {tag}
-                                </span>
-                            ))}
+            <div className="project-page-container">
+                <div className="project-layout">
+                    <aside className="sidebar-container">
+                        <NavBarProject />
+                    </aside>
+                    <main className="project-content-container">
+                        <div className="project-card-description">
+                            <div className="project-header">
+                                <h1 className="project-title">{project.title}</h1>
+                                <div className="tags-section">
+                                    <p className="tags-title">Technologies utilisées :</p>
+                                    <div className="tags-container">
+                                        {project.tags.map((tag, index) => (
+                                            <span key={index} className={formatTagClass(tag)}>
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="project-description">
+                                {project.description.map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
+                            </div>
+                            <div className="project-navigation">
+                                {prevProjectId && (
+                                    <Link to={`/projects/${prevProjectId}`} className="nav-button nav-prev">
+                                        ← Projet précédent
+                                    </Link>
+                                )}
+                                {nextProjectId && (
+                                    <Link to={`/projects/${nextProjectId}`} className="nav-button nav-next">
+                                        Projet suivant →
+                                    </Link>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                    <div className="description">
-                        {project.description.map((paragraph, index) => (
-                            <p key={index}>{paragraph}</p>
-                        ))}
-                    </div>
-                </section>
-            </main>
+                    </main>
+                </div>
+            </div>
         </>
     );
 };
