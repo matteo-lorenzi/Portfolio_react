@@ -28,6 +28,10 @@
   /* Effets */
   --box-shadow-light: 0 4px 15px var(--btn-shadow);
   --box-shadow-hover: 0 6px 20px rgba(0, 153, 255, 0.4);
+
+  --transition: all 0.3s ease;
+
+  --border-radius: 8px;
 }
 
 
